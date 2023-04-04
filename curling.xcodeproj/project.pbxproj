@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9179B75D29C5A3B400586F4E /* clipLeftCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */; };
 		91E5EBA5299CC01B00DF3455 /* curlingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBA4299CC01B00DF3455 /* curlingApp.swift */; };
 		91E5EBA7299CC01B00DF3455 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBA6299CC01B00DF3455 /* ContentView.swift */; };
 		91E5EBA9299CC01C00DF3455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E5EBA8299CC01C00DF3455 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 		91E5EBB6299CC01C00DF3455 /* curlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBB5299CC01C00DF3455 /* curlingTests.swift */; };
 		91E5EBC0299CC01C00DF3455 /* curlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBBF299CC01C00DF3455 /* curlingUITests.swift */; };
 		91E5EBC2299CC01C00DF3455 /* curlingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBC1299CC01C00DF3455 /* curlingUITestsLaunchTests.swift */; };
+		91E5EBD0299CC86100DF3455 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBCF299CC86100DF3455 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clipLeftCircle.swift; sourceTree = "<group>"; };
 		91E5EBA1299CC01B00DF3455 /* curling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = curling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E5EBA4299CC01B00DF3455 /* curlingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curlingApp.swift; sourceTree = "<group>"; };
 		91E5EBA6299CC01B00DF3455 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +47,8 @@
 		91E5EBBB299CC01C00DF3455 /* curlingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = curlingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E5EBBF299CC01C00DF3455 /* curlingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curlingUITests.swift; sourceTree = "<group>"; };
 		91E5EBC1299CC01C00DF3455 /* curlingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curlingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91E5EBCE299CC7F100DF3455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		91E5EBCF299CC86100DF3455 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +99,13 @@
 		91E5EBA3299CC01B00DF3455 /* curling */ = {
 			isa = PBXGroup;
 			children = (
+				91E5EBCE299CC7F100DF3455 /* Info.plist */,
 				91E5EBA4299CC01B00DF3455 /* curlingApp.swift */,
 				91E5EBA6299CC01B00DF3455 /* ContentView.swift */,
+				91E5EBCF299CC86100DF3455 /* LocationManager.swift */,
 				91E5EBA8299CC01C00DF3455 /* Assets.xcassets */,
 				91E5EBAA299CC01C00DF3455 /* Preview Content */,
+				9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */,
 			);
 			path = curling;
 			sourceTree = "<group>";
@@ -257,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9179B75D29C5A3B400586F4E /* clipLeftCircle.swift in Sources */,
 				91E5EBA7299CC01B00DF3455 /* ContentView.swift in Sources */,
 				91E5EBA5299CC01B00DF3455 /* curlingApp.swift in Sources */,
+				91E5EBD0299CC86100DF3455 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -399,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -417,13 +427,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"curling/Preview Content\"";
+				DEVELOPMENT_TEAM = BE7S85FN44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = curling/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,13 +457,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"curling/Preview Content\"";
+				DEVELOPMENT_TEAM = BE7S85FN44;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = curling/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

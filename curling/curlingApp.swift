@@ -12,6 +12,7 @@ struct curlingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //UWBTestView()
         }
     }
 }

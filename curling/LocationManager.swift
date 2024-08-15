@@ -19,8 +19,9 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
-
+        
         //電子コンパス設定
+        manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.headingFilter      = kCLHeadingFilterNone
         manager.headingOrientation = .portrait
         manager.startUpdatingHeading()

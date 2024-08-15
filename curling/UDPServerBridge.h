@@ -1,12 +1,20 @@
 //
 //  UDPServerBridge.h
-//  curling
+//  UDP
 //
 //  Created by User on 2023/07/24.
 //
 
-#ifndef UDPServerBridge_h
-#define UDPServerBridge_h
+#import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
-#endif /* UDPServerBridge_h */
+@interface UDPServerBridge : NSObject
+
+typedef void (^MessageHandler)(NSString *);
+
+- (void)startUDPServerWithHandler:(MessageHandler)handler;
+
+@end
+
+NS_ASSUME_NONNULL_END

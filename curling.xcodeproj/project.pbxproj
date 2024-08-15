@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896A37F12C22B96800B5A678 /* demo.mov in Resources */ = {isa = PBXBuildFile; fileRef = 896A37F02C22B96800B5A678 /* demo.mov */; };
+		89989AF32C6AFBF800913D3F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89989AF22C6AFBF800913D3F /* MapView.swift */; };
 		9179B75D29C5A3B400586F4E /* clipLeftCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */; };
 		91E5EBA5299CC01B00DF3455 /* curlingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBA4299CC01B00DF3455 /* curlingApp.swift */; };
 		91E5EBA7299CC01B00DF3455 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBA6299CC01B00DF3455 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 		91E5EBC0299CC01C00DF3455 /* curlingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBBF299CC01C00DF3455 /* curlingUITests.swift */; };
 		91E5EBC2299CC01C00DF3455 /* curlingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBC1299CC01C00DF3455 /* curlingUITestsLaunchTests.swift */; };
 		91E5EBD0299CC86100DF3455 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5EBCF299CC86100DF3455 /* LocationManager.swift */; };
+		CE6EABEC2A6E3F3100DA9254 /* UDPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EABEB2A6E3F3100DA9254 /* UDPServer.swift */; };
+		CE6EABEF2A6E41F800DA9254 /* UDPServerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6EABEE2A6E41F800DA9254 /* UDPServerBridge.m */; };
 		CE71A4E929E4447A00177BE7 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71A4E829E4447A00177BE7 /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		896A37F02C22B96800B5A678 /* demo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = demo.mov; sourceTree = "<group>"; };
+		89989AF22C6AFBF800913D3F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clipLeftCircle.swift; sourceTree = "<group>"; };
 		91E5EBA1299CC01B00DF3455 /* curling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = curling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91E5EBA4299CC01B00DF3455 /* curlingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curlingApp.swift; sourceTree = "<group>"; };
@@ -50,6 +56,10 @@
 		91E5EBC1299CC01C00DF3455 /* curlingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = curlingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		91E5EBCE299CC7F100DF3455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		91E5EBCF299CC86100DF3455 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CE6EABEB2A6E3F3100DA9254 /* UDPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPServer.swift; sourceTree = "<group>"; };
+		CE6EABED2A6E41F700DA9254 /* curling-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "curling-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE6EABEE2A6E41F800DA9254 /* UDPServerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDPServerBridge.m; sourceTree = "<group>"; };
+		CE6EABF12A6E426A00DA9254 /* UDPServerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDPServerBridge.h; sourceTree = "<group>"; };
 		CE71A4E829E4447A00177BE7 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,11 +114,17 @@
 				91E5EBCE299CC7F100DF3455 /* Info.plist */,
 				91E5EBA4299CC01B00DF3455 /* curlingApp.swift */,
 				91E5EBA6299CC01B00DF3455 /* ContentView.swift */,
+				89989AF22C6AFBF800913D3F /* MapView.swift */,
+				CE6EABEE2A6E41F800DA9254 /* UDPServerBridge.m */,
+				CE6EABF12A6E426A00DA9254 /* UDPServerBridge.h */,
+				CE6EABEB2A6E3F3100DA9254 /* UDPServer.swift */,
 				91E5EBCF299CC86100DF3455 /* LocationManager.swift */,
 				CE71A4E829E4447A00177BE7 /* MotionManager.swift */,
+				896A37F02C22B96800B5A678 /* demo.mov */,
 				91E5EBA8299CC01C00DF3455 /* Assets.xcassets */,
 				91E5EBAA299CC01C00DF3455 /* Preview Content */,
 				9179B75C29C5A3B400586F4E /* clipLeftCircle.swift */,
+				CE6EABED2A6E41F700DA9254 /* curling-Bridging-Header.h */,
 			);
 			path = curling;
 			sourceTree = "<group>";
@@ -206,6 +222,7 @@
 				TargetAttributes = {
 					91E5EBA0299CC01B00DF3455 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1430;
 					};
 					91E5EBB0299CC01C00DF3455 = {
 						CreatedOnToolsVersion = 14.2;
@@ -242,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896A37F12C22B96800B5A678 /* demo.mov in Resources */,
 				91E5EBAC299CC01C00DF3455 /* Preview Assets.xcassets in Resources */,
 				91E5EBA9299CC01C00DF3455 /* Assets.xcassets in Resources */,
 			);
@@ -269,7 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9179B75D29C5A3B400586F4E /* clipLeftCircle.swift in Sources */,
+				89989AF32C6AFBF800913D3F /* MapView.swift in Sources */,
 				CE71A4E929E4447A00177BE7 /* MotionManager.swift in Sources */,
+				CE6EABEF2A6E41F800DA9254 /* UDPServerBridge.m in Sources */,
+				CE6EABEC2A6E3F3100DA9254 /* UDPServer.swift in Sources */,
 				91E5EBA7299CC01B00DF3455 /* ContentView.swift in Sources */,
 				91E5EBA5299CC01B00DF3455 /* curlingApp.swift in Sources */,
 				91E5EBD0299CC86100DF3455 /* LocationManager.swift in Sources */,
@@ -428,10 +449,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"curling/Preview Content\"";
-				DEVELOPMENT_TEAM = BE7S85FN44;
+				DEVELOPMENT_TEAM = WL5P965F5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = curling/Info.plist;
@@ -447,7 +470,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fun.curling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "curling/curling-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -458,10 +484,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"curling/Preview Content\"";
-				DEVELOPMENT_TEAM = BE7S85FN44;
+				DEVELOPMENT_TEAM = WL5P965F5R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = curling/Info.plist;
@@ -477,7 +505,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fun.curling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "curling/curling-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

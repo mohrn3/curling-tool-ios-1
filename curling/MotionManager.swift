@@ -42,6 +42,7 @@ class MotionSensor: NSObject, ObservableObject {
         yAccel = deviceMotion.userAcceleration.y
         zAccel = deviceMotion.userAcceleration.z
         
+        // -180~180で反時計回りが正の値を、0~360で時計回りが正の値のラジアンに変換
         yaw_origin = 360 - (deviceMotion.attitude.yaw * 180 / Double.pi + 180)
         yaw = yaw_origin - res
         if (yaw < 0) {

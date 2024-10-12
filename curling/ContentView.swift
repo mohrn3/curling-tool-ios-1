@@ -32,6 +32,12 @@ struct ContentView: View {
     
     // 9/15 ユーザスタディ用
     let numbers = [15, 44, 71, 38, 89, 21, 50, 28, 75, 56]
+    
+    // 10/11 ユーザスタディ用
+    let numbers1 = [28, 45, 93, 74, 51, 62, 87, 39, 96, 53, 41, 82, 68, 22, 64, 77, 95, 35, 88, 47] //絶対位置
+    let numbers2 = [76, 52, 94, 84, 67, 29, 55, 81, 43, 31, 69, 26, 83, 44, 92, 66, 32, 78, 97, 50] //回転方向
+    let numbers3 = [54, 61, 33, 71, 40, 25, 85, 49, 73, 91, 57, 37, 80, 99, 65, 30, 46, 89, 72, 98] //無回転
+    
     // 現在表示中のインデックスを保持する
     @State private var currentIndex = 0
     
@@ -212,7 +218,7 @@ struct ContentView: View {
                                     .scaledToFill()
                                     .frame(height: displayRadius2 * 2)
                                     .clipShape(Circle())
-                                    .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 135 + res))
+                                    .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 45 + res))
                                     .position(x: CGFloat((presen ? measureX2 : 255)), y: CGFloat((presen ? measureY2 : 240)))
                                     .onAppear {
                                         player.play()
@@ -232,7 +238,7 @@ struct ContentView: View {
                                 }
                                 .frame(width: displayRadius2 * 2, height: displayRadius2 * 2)
                                 .clipShape(Circle())
-                                .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 135 + res))
+                                .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 45 + res))
                                 .position(x: CGFloat((presen ? measureX2 : 255)), y: CGFloat((presen ? measureY2 : 240)))
                                 
                             case 3:
@@ -286,18 +292,64 @@ struct ContentView: View {
                                 }
                                 .scaleEffect(1.5)
                                 .frame(height: displayRadius2 * 2)
-                                .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 135 + res))
+                                .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 45 + res))
                                 .position(x: CGFloat((presen ? measureX2 : 255)), y: CGFloat((presen ? measureY2 : 240)))
 
                                 
                             default:
-                                VideoPlayer(player: player)
-                                    .clipShape(Circle())
-                                    .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 135 + res))
-                                    .position(x: CGFloat((presen ? measureX2 : 255)), y: CGFloat((presen ? measureY2 : 240)))
-                                    .onAppear {
-                                        player.play()
+                                VStack(spacing: 5){
+                                    HStack {
+                                        Text("m/s")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .padding(.top, 32.0)
+                                        Text(String(formattedspeedFromUDP))
+                                            .font(.system(size: 48))
+                                            .foregroundColor(Color.white)
                                     }
+                                    HStack {
+                                        Text("deg/s")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .padding(.top, 32.0)
+                                        Text(String(formattedRotationalspeedFromUDP))
+                                            .font(.system(size: 48))
+                                            .foregroundColor(Color.white)
+                                        
+                                    }
+                                    HStack{
+                                        Text("circle")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .padding(.top, 32.0)
+                                        Text(String(formattedRpmFromUDP))
+                                            .font(.system(size: 48))
+                                            .foregroundColor(Color.white)
+                                    }
+                                    HStack{
+                                        Text("X ")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .padding(.top, 16.0)
+                                        Text(String(roundedXFromUDP))
+                                            .font(.system(size: 32))
+                                            .foregroundColor(Color.white)
+                                            .padding(.trailing, 15.0)
+                                        Text("Y ")
+                                            .foregroundColor(Color.white)
+                                            .fontWeight(.bold)
+                                            .padding(.top, 16.0)
+                                        Text(String(roundedYFromUDP))
+                                            .font(.system(size: 32))
+                                            .foregroundColor(Color.white)
+                                    }
+                                    .padding(.top, 15)
+                                }
+                                .scaleEffect(1.5)
+                                .frame(height: displayRadius2 * 2)
+                                .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) + 45 + res))
+                                .position(x: CGFloat((presen ? measureX2 : 255)), y: CGFloat((presen ? measureY2 : 240)))
+
                             }
                         }
                         .padding(.trailing, 50)
@@ -369,7 +421,7 @@ struct ContentView: View {
                                 .padding(.top, 15)
                             }
                             .scaleEffect(1.5)
-                            .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) - 135 + res))
+                            .rotationEffect(Angle(degrees: (rotate ? -heading : -sensor.yaw) - 45 + res))
                             .position(x: CGFloat((presen ? measureX3 : 769)), y: CGFloat((presen ? measureY3 : 240)))
                         }
                     }
@@ -452,7 +504,7 @@ struct ContentView: View {
                 //                                .rotationEffect(.degrees(90))
                 //                                .padding(.trailing, 630)
                 //
-                //                            Divider()
+                //                            Divider()x
                 //                                .frame(width: 89)
                 //                                .background(.black)
                 //                                .rotationEffect(.degrees(90))
@@ -491,12 +543,92 @@ struct ContentView: View {
                 //                        .scaleEffect(0.8)
                 //                    }
                 
+//                VStack{
+//                    Button(action: {
+//                        status = (status % 3) + 1 // 1, 2, 3の間でステータスを変更
+//                    }) {
+//                        Text("Change Status")
+//                    }
+//                    
+//                    HStack{
+//                        Button(action: {
+//                            udpServer.startUDPServer(onPort: udpPort) { message in
+//                                DispatchQueue.main.async {
+//                                    receivedMessage = message
+//                                }
+//                            }
+//                        }) {
+//                            Image(systemName: "wave.3.right") // ここに画像の名前を指定
+//                            //                                    .padding(10)
+//                                .frame(width: 100, height: 100)
+//                                .font(.system(size: 32))
+//                                .foregroundColor(Color.black)
+//                                .background(Color.white)
+//                                .clipShape(Circle())
+//                        }
+//                        .padding(.trailing, 20)
+//                        
+//                        Button(action: {
+//                            print(forYawReset)
+//                            res = heading
+//                            if (forYawReset) {
+//                                sensor.res = sensor.yaw_origin - heading
+//                                //                        forYawReset = false
+//                                
+//                            }
+//                        }) {
+//                            Image("Reset") // ここに画像の名前を指定
+//                                .resizable()
+//                                .padding(12)
+//                                .frame(width: 100, height: 100)
+//                                .imageScale(.large)
+//                                .background(Color.white)
+//                                .clipShape(Circle())
+//                        }
+//                    }
+//                    .padding(.bottom, 20)
+//                    
+//                    HStack{
+//                        Button(action: {
+//                            rotate = !rotate
+//                            msg = rotate ? "OFF" : "ON"
+//                        }) {
+//                            Text(msg)
+//                                .bold()
+//                                .frame(width: 100, height: 100)
+//                                .font(.system(size: 32))
+//                                .foregroundColor(Color.black)
+//                                .background(Color.white)
+//                                .clipShape(Circle())
+//                        }
+//                        .padding(.trailing, 20)
+//                        
+//                        Button(action: {
+//                            presen = !presen
+//                            msg2 = presen ? "回転固定あり 位置固定あり" : "回転固定あり 位置固定なし"
+//                        }) {
+//                            Image(presen ? "position" : "direction") // ここに画像の名前を指定
+//                                .resizable()
+//                                .frame(width: 100, height: 100)
+//                                .imageScale(.large)
+//                                .background(Color.white)
+//                                .clipShape(Circle())
+//                        }
+//                    }
+//                }
+//                //                もどす！！！！！！
+//                .padding(.leading, -60)
+//                .padding(.vertical, 50)
+                
                 VStack{
                     Button(action: {
                         status = (status % 3) + 1 // 1, 2, 3の間でステータスを変更
                     }) {
                         Text("Change Status")
+                            .font(.system(size: 12)) // フォントサイズを小さく
+                            .foregroundColor(Color.white) // 文字色を黒に
                     }
+                    .background(Color.black) // 背景色を黒に
                     
                     HStack{
                         Button(action: {
@@ -506,35 +638,28 @@ struct ContentView: View {
                                 }
                             }
                         }) {
-                            Image(systemName: "wave.3.right") // ここに画像の名前を指定
-                            //                                    .padding(10)
-                                .frame(width: 100, height: 100)
-                                .font(.system(size: 32))
-                                .foregroundColor(Color.black)
-                                .background(Color.white)
-                                .clipShape(Circle())
+                            Text("UDP")
+                                .font(.system(size: 16)) // フォントサイズを小さく
+                                .foregroundColor(Color.white)
                         }
-                        .padding(.trailing, 20)
+                        .background(Color.black)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
                         
                         Button(action: {
                             print(forYawReset)
                             res = heading
                             if (forYawReset) {
                                 sensor.res = sensor.yaw_origin - heading
-                                //                        forYawReset = false
-                                
                             }
                         }) {
-                            Image("Reset") // ここに画像の名前を指定
-                                .resizable()
-                                .padding(12)
-                                .frame(width: 100, height: 100)
-                                .imageScale(.large)
-                                .background(Color.white)
+                            Text("Reset")
+                                .foregroundColor(Color.white)
+                                .frame(width: 50, height: 50)
+                                .background(Color.black)
                                 .clipShape(Circle())
                         }
                     }
-                    .padding(.bottom, 20)
                     
                     HStack{
                         Button(action: {
@@ -542,31 +667,27 @@ struct ContentView: View {
                             msg = rotate ? "OFF" : "ON"
                         }) {
                             Text(msg)
-                                .bold()
-                                .frame(width: 100, height: 100)
-                                .font(.system(size: 32))
-                                .foregroundColor(Color.black)
-                                .background(Color.white)
-                                .clipShape(Circle())
+                                .font(.system(size: 16))
+                                .foregroundColor(Color.white)
                         }
-                        .padding(.trailing, 20)
+                        .background(Color.black)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
                         
                         Button(action: {
                             presen = !presen
                             msg2 = presen ? "回転固定あり 位置固定あり" : "回転固定あり 位置固定なし"
                         }) {
-                            Image(presen ? "position" : "direction") // ここに画像の名前を指定
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .imageScale(.large)
-                                .background(Color.white)
+                            Text(presen ? "絶対位置" : "回転方向")
+                                .foregroundColor(Color.white)
+                                .frame(width: 50, height: 50)
+                                .background(Color.black)
                                 .clipShape(Circle())
                         }
                     }
                 }
-                //                もどす！！！！！！
-                .padding(.leading, -60)
-                .padding(.vertical, 50)
+                .padding(.trailing, 800) // 寄せる
+                .padding(.vertical, 50) // 縦方向のパディング
                 
                 
             }
@@ -575,32 +696,11 @@ struct ContentView: View {
     
     // 3秒ごとに配列のインデックスを更新するタイマー
     func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             currentIndex = (currentIndex + 1) % numbers.count // 配列の範囲を超えないようにインデックスを更新
         }
     }
-    
-//    // 線形変換を行う関数
-//    func linearTransformX(x: CGFloat) -> CGFloat {
-//        let newPosition: CGFloat = (((x + 20) * 445) / 40)
-//        if (newPosition >= 222){
-//            return CGFloat(newPosition - 222)
-//        } else {
-//            return CGFloat(-(newPosition - 222))
-//        }
-//    }
-    
-    
-//    // 線形変換を行う関数
-//    func linearTransformY(y: Double, minY: Double, maxY: Double, minNew: Double, maxNew: Double) -> CGFloat {
-//        let newPosition = ((y - minY) * (maxNew - minNew) / (maxY - minY)) + minNew
-//        if (newPosition >= 23){
-//            return CGFloat(newPosition - 23)
-//        } else {
-//            return CGFloat(-(newPosition - 23))
-//        }
-//    }
-    
+
 
 }
 
